@@ -1,8 +1,6 @@
-```css
-/* =================================
-   TYPES OF FORESTS
-   PREMIUM FOREST WEBSITE
-================================= */
+/* =========================
+   FOREST WORLD - PREMIUM CSS
+========================= */
 
 * {
     margin: 0;
@@ -12,9 +10,9 @@
 }
 
 :root {
-    --dark: #071b14;
+    --dark: #061b12;
     --green: #123d2b;
-    --light-green: #9ee6a8;
+    --light-green: #a8f0ad;
     --accent: #d3f5b4;
     --white: #f5fff7;
     --muted: #b5cbbd;
@@ -34,13 +32,13 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(7, 27, 20, 0.95);
+    background: rgba(6, 27, 18, 0.96);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(158, 230, 168, 0.15);
+    border-bottom: 1px solid rgba(168, 240, 173, 0.2);
 }
 
 .navbar {
-    max-width: 1200px;
+    max-width: 1250px;
     margin: auto;
     padding: 18px 5%;
     display: flex;
@@ -72,7 +70,7 @@ header {
     color: var(--light-green);
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero {
     min-height: 90vh;
@@ -82,10 +80,14 @@ header {
     align-items: center;
     text-align: center;
     padding: 80px 20px;
+
     background:
-        linear-gradient(rgba(3, 20, 12, 0.68),
-        rgba(3, 20, 12, 0.88)),
+        linear-gradient(
+            rgba(3, 20, 12, 0.65),
+            rgba(3, 20, 12, 0.90)
+        ),
         url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=85");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -99,7 +101,7 @@ header {
 }
 
 .hero h1 {
-    font-size: clamp(42px, 8vw, 88px);
+    font-size: clamp(48px, 8vw, 95px);
     line-height: 1.08;
     font-weight: 800;
     background: linear-gradient(90deg, #ffffff, #a8f0ad);
@@ -119,7 +121,7 @@ header {
 .btn {
     display: inline-block;
     margin-top: 30px;
-    padding: 14px 30px;
+    padding: 14px 32px;
     background: var(--light-green);
     color: #092316;
     text-decoration: none;
@@ -131,15 +133,16 @@ header {
 .btn:hover {
     transform: translateY(-4px);
     background: white;
-    box-shadow: 0 10px 30px rgba(158, 230, 168, 0.2);
+    box-shadow: 0 10px 30px rgba(168, 240, 173, 0.25);
 }
 
-/* GENERAL SECTIONS */
+/* SECTIONS */
 
 section:not(.hero) {
     padding: 90px 8%;
-    max-width: 1400px;
+    max-width: 1450px;
     margin: auto;
+    scroll-margin-top: 90px;
 }
 
 section h2 {
@@ -156,67 +159,81 @@ section p {
     color: var(--muted);
 }
 
-/* SUBJECT CARDS */
+/* CARDS */
 
 .subject-grid,
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 22px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 45px;
 }
 
 .subject-card,
 .team-grid div {
-    background: linear-gradient(145deg, #153d2b, #0c281c);
-    border: 1px solid rgba(158, 230, 168, 0.18);
-    border-radius: 18px;
-    padding: 30px 20px;
+    background: linear-gradient(145deg, #17432e, #0b281c);
+    border: 1px solid rgba(168, 240, 173, 0.2);
+    border-radius: 20px;
+    padding: 32px 22px;
     text-align: center;
     color: var(--white);
     font-size: 18px;
     font-weight: 600;
-    transition: 0.35s;
+    transition: 0.35s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .subject-card:hover,
 .team-grid div:hover {
-    transform: translateY(-8px);
+    transform: translateY(-9px);
     border-color: var(--light-green);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* FOREST CONTAINER */
+.subject-card h3 {
+    color: var(--light-green);
+    margin: 10px 0;
+    font-size: 21px;
+}
+
+.subject-card p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* MODEL SECTION */
 
 #forest-container {
     margin: 35px auto 0;
     max-width: 900px;
-    padding: 30px;
+    padding: 40px 25px;
     text-align: center;
-    background: #102f21;
-    border-radius: 18px;
-    color: var(--muted);
+    background: linear-gradient(145deg, #153d2b, #0b281c);
+    border: 1px solid rgba(168, 240, 173, 0.2);
+    border-radius: 22px;
+}
+
+#forest-container h3 {
+    color: var(--light-green);
+    font-size: 25px;
 }
 
 /* FOOTER */
 
 footer {
     text-align: center;
-    padding: 35px 20px;
-    background: #04110c;
-    border-top: 1px solid rgba(158, 230, 168, 0.15);
+    padding: 40px 20px;
+    background: #030f09;
+    border-top: 1px solid rgba(168, 240, 173, 0.2);
 }
 
 footer p {
     color: var(--muted);
     font-size: 14px;
+    margin: 7px;
 }
 
-/* SCROLL REVEAL */
-
-section:not(.hero) {
-    animation: fadeIn 0.8s ease both;
-}
+/* ANIMATION */
 
 @keyframes fadeIn {
     from {
@@ -228,6 +245,10 @@ section:not(.hero) {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+section:not(.hero) {
+    animation: fadeIn 0.8s ease both;
 }
 
 /* MOBILE RESPONSIVE */
@@ -267,7 +288,7 @@ section:not(.hero) {
     }
 }
 
-/* REDUCED MOTION */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -278,4 +299,3 @@ section:not(.hero) {
         transition-duration: 0.01ms !important;
     }
 }
-```
