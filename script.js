@@ -1,22 +1,24 @@
-```javascript
-// Smooth reveal animation when sections appear
-const sections = document.querySelectorAll("section");
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("FOREST WEBSITE JAVASCRIPT WORKING!");
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
+    const cards = document.querySelectorAll(".forest-card");
+
+    cards.forEach(function (card) {
+        card.addEventListener("click", function () {
+            card.classList.toggle("selected");
+        });
     });
-}, {
-    threshold: 0.15
-});
 
-sections.forEach((section) => {
-    observer.observe(section);
-});
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            const target = document.querySelector(link.getAttribute("href"));
 
-// Welcome message in browser console
-console.log("Welcome to Types of Forests 🌲");
-console.log("Healthy Forests, Healthy Planet!");
-```
+            if (target) {
+                event.preventDefault();
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+});
