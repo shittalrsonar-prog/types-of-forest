@@ -474,4 +474,10 @@ footer h3 {
         transform: none;
     }
 
+}.subject-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
 }
