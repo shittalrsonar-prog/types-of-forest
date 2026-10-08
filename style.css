@@ -547,3 +547,14 @@ footer h3 {
     object-fit: cover;
     display: block;
 }
+.flip-card-back h3 {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #d6b66a;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
