@@ -547,3 +547,9 @@ footer h3 {
     object-fit: cover;
     display: block;
 }
+.flip-card {
+    perspective: 1000px;
+    cursor: pointer;
+    padding: 0 !important;
+    height: 300px !important;
+}
