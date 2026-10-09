@@ -611,3 +611,136 @@ footer h3 {
         transform: none;
     }
 }
+/* SUBJECT GRID - 3D FLIP ANIMATION */
+
+.subject-flip-card {
+    padding: 0 !important;
+    min-height: 360px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.subject-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+.subject-flip-card.flipped .subject-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.subject-flip-front,
+.subject-flip-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #123d2b,
+        #061b12
+    );
+
+    border: 1px solid rgba(214, 182, 106, 0.3);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.subject-flip-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.subject-flip-front h3 {
+    color: var(--gold);
+    font-size: 23px;
+    margin: 0 0 12px;
+}
+
+.subject-flip-front p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.subject-flip-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.subject-flip-back img {
+    width: 100%;
+    height: 190px;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.subject-flip-back h3 {
+    color: var(--gold);
+    font-size: 21px;
+    margin: 0 0 8px;
+}
+
+.subject-flip-back p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Golden Glow */
+
+.subject-flip-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(214, 182, 106, 0.25);
+}
+
+/* Mobile Support */
+
+@media (max-width: 600px) {
+    .subject-flip-card {
+        min-height: 360px;
+    }
+
+    .subject-flip-inner {
+        height: 360px;
+    }
+
+    .subject-flip-card:hover {
+        transform: none;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .subject-flip-inner,
+    .subject-flip-card {
+        transition-duration: 0.01ms;
+    }
+}
