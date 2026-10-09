@@ -745,3 +745,42 @@ footer h3 {
         transition-duration: 0.01ms;
     }
 }
+/* MODEL SECTION - GOLDEN HOVER GLOW */
+
+#forest-container {
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    border: 1px solid rgba(214, 182, 106, 0.25);
+    border-radius: 15px;
+}
+
+#forest-container:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 25px rgba(214, 182, 106, 0.3);
+}
+
+
+/* TEAM GRID - GOLDEN HOVER GLOW */
+
+.team-card {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+    border: 1px solid rgba(214, 182, 106, 0.25);
+    border-radius: 15px;
+}
+
+.team-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: 0 0 25px rgba(214, 182, 106, 0.3);
+}
+
+
+/* MOBILE SUPPORT */
+
+@media (max-width: 600px) {
+    .team-card:hover {
+        transform: none;
+    }
+}
